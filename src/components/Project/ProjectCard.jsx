@@ -1,8 +1,12 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ProjectCard = ({ image, title, description, tech, demoLink, codeLink }) => {
+      useEffect(() => {
+        AOS.init({ duration: 1000 });
+      }, []);
   return (
-    <div className="bg-white border shadow-md rounded-xl p-6 hover:shadow-lg transition-all duration-300 w-full md:w-[300px]">
+    <div className="bg-white border shadow-md rounded-xl p-6 hover:shadow-lg transition-all duration-300 w-full md:w-[300px]" data-aos="fade-up">
       <img src={image} alt={title} className="w-full h-48 object-cover rounded-md mb-4" />
       
       <h3 className="text-2xl font-bold text-purple-600 mb-2">{title}</h3>

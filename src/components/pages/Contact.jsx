@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
+ useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
-    <section className="py-16 px-6 bg-white" id="contact">
+    <section className="py-16 px-6 bg-white" data-aos="fade-up" id="contact">
       <h2 className="text-4xl font-bold text-center text-purple-600 mb-10">Contact Me</h2>
 
       <div className="max-w-xl mx-auto bg-gray-100 p-8 rounded-lg shadow-md">

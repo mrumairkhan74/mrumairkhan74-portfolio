@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -24,8 +26,11 @@ const skills = [
 ];
 
 const Skills = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
-    <section className="py-16 px-6 bg-gray-100" id="skills">
+    <section className="py-16 px-6 bg-gray-100" data-aos="fade-up" id="skills">
       <h2 className="text-4xl font-bold text-center text-purple-600 mb-10">
         Skills
       </h2>

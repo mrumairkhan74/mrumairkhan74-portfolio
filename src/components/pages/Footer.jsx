@@ -1,8 +1,16 @@
 import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
-    <footer className="bg-purple-700 text-white py-6 text-center">
+    <footer
+      className="bg-purple-700 text-white py-6 text-center"
+      data-aos="fade-up"
+    >
       <p className="text-sm">
         &copy; {new Date().getFullYear()} Umair Khan. All rights reserved.
       </p>
