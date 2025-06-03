@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 
 const Footer = () => {
   return (
-<footer className="bg-purple-700 text-white py-6 px-4 text-center fixed bottom-0 w-full">
+<footer className="bg-purple-700 text-white py-6 px-4 text-center w-full flex items-center justify-center gap-5">
       <p className="text-sm sm:text-base">
         &copy; {new Date().getFullYear()} Umair Khan. All rights reserved.
       </p>
 
-      <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm sm:text-base">
+      <div className=" flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm sm:text-base">
         <a
           href="https://github.com/mrumairkhan74"
           target="_blank"
