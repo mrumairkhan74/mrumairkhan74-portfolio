@@ -33,6 +33,7 @@ const Home = () => {
 
   return (
     <>
+      <HomeBg />
       <main
         className="relative flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto 
           px-12 py-32 md:py-40 gap-16 z-10 "
@@ -46,12 +47,12 @@ const Home = () => {
             </span>
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl text-purple-600 font-mono mb-10">
+          <h2 className="text-[16px] sm:text-xl text-purple-600 font-mono mb-10">
             <Typewriter
               words={titles}
               loop
               cursor
-              cursorStyle="_"
+              cursorStyle="|"
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={1500}
