@@ -1,30 +1,87 @@
-.reserve {
-  animation: spin 0.5s 0s infinite;
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
+/* Generic spinning animation - clockwise */
 .spin2 {
-  animation: spin2 0.5s 0s infinite;
+  animation: loading-1 0.5s 0s infinite;
 }
-@keyframes spin2 {
-  0% {
+.reserve {
+  animation: loading-2 0.5s 0s infinite;
+}
+@keyframes loading-1 {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
-.new-1 {
-  animation: new1 1s ease-in-out 0s infinite;
+/* Generic spinning animation - counter-clockwise */
+@keyframes loading-2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
-@keyframes new1 {
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Generic spinning animation - counter-clockwise */
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+/* Spinning Border 1 */
+.spinning-border {
+  width: 70vw;
+  max-width: 280px;
+  height: 70vw;
+  max-height: 280px;
+  border: 5px solid transparent;
+  border-right-color: #9333ea; /* Tailwind's purple-600 */
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+/* Spinning Border 2 */
+.spinning-border2 {
+  width: 70vw;
+  max-width: 280px;
+  height: 70vw;
+  max-height: 280px;
+  border: 5px solid transparent;
+  border-right-color: #7c3aed; /* Tailwind purple-700 */
+  border-radius: 50%;
+  animation: spin-reverse 4s linear infinite;
+}
+
+/* Bounce text animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Pulse scale-in animation */
+@keyframes scale-in {
   0% {
     transform: scale(0.9);
     opacity: 0;
@@ -38,48 +95,6 @@
   }
 }
 
-
-/* styles.css */
-.spinning-border {
-    width: 280px;
-    height: 280px;
-    border: 5px solid transparent;
-    border-right-color: #9333ea; /* Tailwind's purple-600 */
-    border-radius: 50%;
-    animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-.spinning-border2 {
-    width: 280px;
-    height: 280px;
-    border: 5px solid transparent;
-    border-right-color: #333cea; /* Tailwind's purple-600 */
-    border-radius: 50%;
-    animation: spin3 4s linear infinite;
-  }
-  
-  @keyframes spin3 {
-    to {
-      transform: rotate(-360deg);
-    }
-  }
-  
-  /* styles.css */
-@keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-  }
-  
-  .bounce {
-    animation: bounce 2s infinite;
-  }
-  
+.scale-in {
+  animation: scale-in 1s ease-in-out infinite;
+}
