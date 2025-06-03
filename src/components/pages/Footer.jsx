@@ -1,20 +1,13 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Footer = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
   return (
-    <footer
-      className="bg-purple-700 text-white py-6 text-center"
-      data-aos="fade-up"
-    >
-      <p className="text-sm">
+    <footer className="bg-purple-700 text-white py-6 px-4 text-center">
+      <p className="text-sm sm:text-base">
         &copy; {new Date().getFullYear()} Umair Khan. All rights reserved.
       </p>
-      <div className="mt-3 flex justify-center space-x-6">
+
+      <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm sm:text-base">
         <a
           href="https://github.com/mrumairkhan74"
           target="_blank"

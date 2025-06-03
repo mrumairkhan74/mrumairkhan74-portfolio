@@ -2,15 +2,12 @@ import React, { useState, useEffect } from "react";
 import Loading from "../background/Loading";
 import { Typewriter } from "react-simple-typewriter";
 import HomeBg from "../background/HomeBg";
-import "../styles/styles.css";
+import "../styles/styles.css"; // make sure spinning-border CSS is here
 import About from "./About";
 import Projects from "../Project/Projects";
 import Contact from "./Contact";
 import Skills from "./Skills";
 
-import { motion } from "framer-motion";
-
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Home = () => {
@@ -31,38 +28,29 @@ const Home = () => {
 
     return () => clearTimeout(timer);
   }, []);
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
+  if (loading) return <Loading />;
 
   return (
     <>
       <HomeBg />
-      <motion.main
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        data-aos="fade-up"
-        className={`m-20 relative flex flex-col  md:flex-row justify-around items-center transition-opacity duration-1000 z-10 ${
-          fadeIn ? "opacity-100" : "opacity-0"
-        }`}
+      <main
+        className="relative flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto 
+          px-12 py-32 md:py-40 gap-16 z-10 "
       >
-        <div className="flex-1 m-5 p-5 rounded-lg">
-          <h1 className="text-5xl font-semibold bounce">
+        {/* Text Content */}
+        <div className="text-center md:text-left md:flex-1">
+          <h1 className="text-4xl sm:text-5xl font-semibold bounce mb-6">
             Hello! I'm{" "}
             <span className="text-purple-500 font-mono">
               Umair <span>Khan</span>
             </span>
           </h1>
 
-          <h2 className="text-3xl text-purple-600 font-mono mt-4 px-2">
+          <h2 className="text-2xl sm:text-3xl text-purple-600 font-mono mb-10">
             <Typewriter
               words={titles}
-              loop={true}
+              loop
               cursor
               cursorStyle="_"
               typeSpeed={70}
@@ -71,28 +59,31 @@ const Home = () => {
             />
           </h2>
 
-          <div className="flex m-5">
-            <a
-              href="https://drive.google.com/file/d/1PDzwgE3HYjAQWPmhxjITFoOhNEQVGO0_/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-purple-600 p-4 rounded-md text-lg text-white hover:bg-purple-700 transition-colors"
-            >
-              Download Resume
-            </a>
-          </div>
+          <a
+            href="https://drive.google.com/file/d/1PDzwgE3HYjAQWPmhxjITFoOhNEQVGO0_/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 px-6 py-3 rounded-md text-white text-base hover:bg-purple-700 transition-colors"
+          >
+            Download Resume
+          </a>
         </div>
 
-        <div className="flex-1 m-5 flex justify-center items-center relative">
+        {/* Profile Picture with Spinning Borders */}
+        <div className="relative md:flex-1 flex justify-center items-center max-w-[300px] sm:max-w-[350px] w-full">
           <img
             src="./images/pfp.png"
             alt="Profile"
-            className="rounded-full shadow-md shadow-purple-600 hover:rotate-360 transition-transform duration-500"
+            className="w-full rounded-full shadow-md shadow-purple-600 hover:rotate-360 transition-transform duration-500"
           />
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-5 border-r-purple-500 border-l-0 border-t-0 border-b-0  p-[260px] spinning-border rounded-[50%] "></span>
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-5 border-r-purple-500 border-l-0 border-t-0 border-b-0  p-[260px] spinning-border2 rounded-[50%]"></span>
+          {/* Outer spinning border */}
+          <span className="absolute inset-0 border-4 border-r-purple-500 border-l-transparent border-t-transparent border-b-transparent rounded-full spinning-border pointer-events-none" />
+          {/* Inner reverse spinning border */}
+          <span className="absolute inset-2 border-4 border-r-purple-400 border-l-transparent border-t-transparent border-b-transparent rounded-full spinning-border2 pointer-events-none" />
         </div>
-      </motion.main>
+      </main>
+
+      {/* Other Sections */}
       <About />
       <Projects />
       <Skills />

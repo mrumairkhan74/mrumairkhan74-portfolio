@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+
 import ProjectCard from "./ProjectCard";
 
 const projectList = [
@@ -28,15 +27,12 @@ const projectList = [
     tech: ["Node.js", "Express", "MongoDB", "JWT", "Tailwindcss"],
     demoLink: "https://mooncart-oxnt.onrender.com",
     codeLink: "https://github.com/mrumairkhan74/MoonCart.git",
-  }
+  },
 ];
 
 const Projects = () => {
-    useEffect(() => {
-      AOS.init({ duration: 1000 });
-    }, []);
   return (
-    <section className="py-20 bg-gray-50" data-aos="fade-up" id="projects">
+    <section className="py-20 bg-gray-50" id="projects">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-purple-700 mb-12">
           My Projects
