@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-purple-700 text-white py-6 px-4 text-center">
+<footer className="bg-purple-700 text-white py-6 px-4 text-center fixed bottom-0 w-full">
       <p className="text-sm sm:text-base">
         &copy; {new Date().getFullYear()} Umair Khan. All rights reserved.
       </p>
