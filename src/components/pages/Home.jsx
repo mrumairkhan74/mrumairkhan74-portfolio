@@ -8,11 +8,11 @@ import Projects from "../Project/Projects";
 import Contact from "./Contact";
 import Skills from "./Skills";
 
-import "aos/dist/aos.css";
+// import "aos/dist/aos.css";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
-  const [fadeIn, setFadeIn] = useState(false);
+  // const [fadeIn, setFadeIn] = useState(false);
 
   const titles = [
     "Web Developer",
@@ -20,14 +20,14 @@ const Home = () => {
     "Node.js API Developer",
   ];
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-      setFadeIn(true);
-    }, 2000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //     setFadeIn(true);
+  //   }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   if (loading) return <Loading />;
 
