@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <>
-      <HomeBg />
+
       <main
         className="relative flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto 
           px-12 py-32 md:py-40 gap-16 z-10 "
